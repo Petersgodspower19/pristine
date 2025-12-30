@@ -1,0 +1,2481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pristine Global — International Cleaning Excellence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Bright & Clean Palette */
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F9FAFB;
+            --bg-accent: #F0F9FF;
+            
+            /* Trust Colors */
+            --blue-primary: #1D4ED8;
+            --blue-light: #3B82F6;
+            --blue-accent: #60A5FA;
+            --sky: #E0F2FE;
+            
+            /* Fresh Green */
+            --green: #22C55E;
+            --green-light: #86EFAC;
+            
+            /* Action Orange */
+            --orange: #F97316;
+            --orange-light: #FDBA74;
+            
+            /* Neutrals */
+            --text-dark: #1E293B;
+            --text-medium: #475569;
+            --text-light: #94A3B8;
+            --border: #E2E8F0;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.08);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--blue-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--orange);
+            color: var(--bg-primary);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.25);
+        }
+
+        .nav-cta:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.35);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 5% 4rem;
+            background: 
+                linear-gradient(135deg, rgba(240, 249, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&h=1080&fit=crop&q=80') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(29, 78, 216, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30px, -30px); }
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--blue-primary);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            letter-spacing: -1.5px;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-light) 50%, var(--green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--bg-primary);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: #ea580c;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(249, 115, 22, 0.35);
+        }
+
+        .btn-secondary {
+            background: var(--bg-primary);
+            color: var(--blue-primary);
+            padding: 1.2rem 3rem;
+            border: 2px solid var(--blue-primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--blue-primary);
+            color: var(--bg-primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border);
+            background: var(--bg-primary);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-primary);
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        .badge-stat {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--green);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .badge-label {
+            font-size: 0.8rem;
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            padding: 3rem 5%;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-primary);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .trust-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-label {
+            color: var(--text-medium);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 5%;
+            background: var(--bg-primary);
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--bg-accent);
+            color: var(--blue-primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue-primary), var(--green));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--blue-accent);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--sky) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-description {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--blue-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 8rem 5%;
+            background: var(--bg-secondary);
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(29, 78, 216, 0.95) 0%, transparent 100%);
+            padding: 2rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            color: var(--bg-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 8rem 5%;
+            background: var(--bg-primary);
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: #FBBF24;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--blue-primary);
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-title {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 8rem 5%;
+            background: var(--bg-secondary);
+        }
+
+        .why-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .why-content {
+            max-width: 600px;
+        }
+
+        .why-intro {
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin: 2rem 0 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--sky) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-primary);
+        }
+
+        .feature-item h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        .why-image {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border);
+        }
+
+        .why-image img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-stats {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+        }
+
+        .stat-badge {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .stat-badge-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-badge-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-medium);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 8rem 5%;
+            background: var(--bg-primary);
+        }
+
+        .process-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .process-step {
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-light) 100%);
+            color: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+            z-index: 2;
+        }
+
+        .step-image {
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+        }
+
+        .process-step:hover .step-image {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .step-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .step-description {
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+
+        /* Showcase Section */
+        .showcase-section {
+            padding: 8rem 5%;
+            background: var(--bg-secondary);
+        }
+
+        .showcase-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .showcase-content {
+            max-width: 550px;
+        }
+
+        .showcase-text {
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin: 2rem 0 3rem;
+        }
+
+        .showcase-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .showcase-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-medium);
+            font-size: 1.05rem;
+        }
+
+        .showcase-feature svg {
+            color: var(--green);
+            flex-shrink: 0;
+        }
+
+        .showcase-images {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .showcase-image-main {
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .showcase-image-main img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .showcase-image-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+        }
+
+        .showcase-image-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 8rem 5%;
+            background: var(--bg-primary);
+        }
+
+        .pricing-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-primary);
+            border: 2px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--blue-accent);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--blue-primary);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-accent) 100%);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--orange) 0%, #ea580c 100%);
+            color: var(--bg-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-name {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-subtitle {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        .pricing-price {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .price-currency {
+            font-size: 2rem;
+            color: var(--text-medium);
+            vertical-align: super;
+        }
+
+        .price-amount {
+            font-family: 'Sora', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-medium);
+        }
+
+        .pricing-features svg {
+            color: var(--green);
+            flex-shrink: 0;
+        }
+
+        .pricing-button {
+            width: 100%;
+            background: var(--bg-primary);
+            color: var(--blue-primary);
+            padding: 1.1rem;
+            border: 2px solid var(--blue-primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-button:hover {
+            background: var(--blue-primary);
+            color: var(--bg-primary);
+        }
+
+        .pricing-button.primary {
+            background: var(--orange);
+            color: var(--bg-primary);
+            border-color: var(--orange);
+        }
+
+        .pricing-button.primary:hover {
+            background: #ea580c;
+            border-color: #ea580c;
+        }
+
+        /* Coverage Section */
+        .coverage {
+            padding: 8rem 5%;
+            background: var(--bg-secondary);
+        }
+
+        .coverage-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .coverage-content {
+            max-width: 550px;
+        }
+
+        .coverage-text {
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin: 2rem 0 3rem;
+        }
+
+        .coverage-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .coverage-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-primary);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .coverage-stat-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .coverage-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+
+        .coverage-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border);
+        }
+
+        .coverage-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--bg-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .cta-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            padding: 0.5rem;
+            border-radius: 60px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cta-input {
+            flex: 1;
+            padding: 1.2rem 2rem;
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .cta-input:focus {
+            outline: none;
+        }
+
+        .cta-input::placeholder {
+            color: var(--text-light);
+        }
+
+        .cta-submit {
+            background: var(--orange);
+            color: var(--bg-primary);
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .cta-submit:hover {
+            background: #ea580c;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 5rem 5% 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+
+        .footer-column h4 {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue-primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-img {
+                height: 450px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .why-image img {
+                height: 500px;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .showcase-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .coverage-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .navbar {
+                padding: 1.2rem 5%;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-cta {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 4rem 5% 3rem;
+            }
+
+            .hero-container {
+                gap: 2.5rem;
+            }
+
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.5rem 1.2rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+                padding: 1.1rem 2rem;
+            }
+
+            .hero-img {
+                height: 350px;
+            }
+
+            .image-badge {
+                top: 15px;
+                right: 15px;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .badge-stat {
+                font-size: 1.5rem;
+            }
+
+            .badge-label {
+                font-size: 0.7rem;
+            }
+
+            .trust-bar {
+                padding: 2rem 5%;
+            }
+
+            .trust-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.2rem;
+            }
+
+            .trust-item {
+                padding: 1.5rem 1rem;
+            }
+
+            .trust-number {
+                font-size: 2.2rem;
+            }
+
+            .trust-label {
+                font-size: 0.85rem;
+            }
+
+            .services,
+            .why-choose,
+            .process,
+            .showcase-section,
+            .gallery,
+            .pricing,
+            .coverage,
+            .testimonials,
+            .cta-section {
+                padding: 5rem 5%;
+            }
+
+            .section-badge {
+                font-size: 0.75rem;
+                padding: 0.5rem 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .section-description {
+                font-size: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+
+            .service-title {
+                font-size: 1.3rem;
+            }
+
+            .service-description {
+                font-size: 0.95rem;
+            }
+
+            .why-intro,
+            .showcase-text,
+            .coverage-text {
+                font-size: 1rem;
+                margin: 1.5rem 0 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            .feature-item h4 {
+                font-size: 1rem;
+            }
+
+            .feature-item p {
+                font-size: 0.9rem;
+            }
+
+            .why-image img {
+                height: 400px;
+            }
+
+            .stat-badge {
+                padding: 1.5rem;
+            }
+
+            .stat-badge-number {
+                font-size: 2.5rem;
+            }
+
+            .stat-badge-label {
+                font-size: 0.9rem;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .step-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+            .step-image img {
+                height: 220px;
+            }
+
+            .step-title {
+                font-size: 1.3rem;
+            }
+
+            .step-description {
+                font-size: 0.95rem;
+            }
+
+            .showcase-features {
+                gap: 0.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .showcase-feature {
+                font-size: 0.95rem;
+            }
+
+            .showcase-image-main img {
+                height: 350px;
+            }
+
+            .showcase-image-grid img {
+                height: 200px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .gallery-overlay {
+                padding: 1.5rem 1rem;
+            }
+
+            .gallery-title {
+                font-size: 1rem;
+            }
+
+            .pricing-grid {
+                gap: 1.5rem;
+            }
+
+            .pricing-card {
+                padding: 2.5rem 2rem;
+            }
+
+            .pricing-name {
+                font-size: 1.5rem;
+            }
+
+            .price-amount {
+                font-size: 3rem;
+            }
+
+            .pricing-features {
+                gap: 0.8rem;
+            }
+
+            .pricing-features li {
+                font-size: 0.9rem;
+            }
+
+            .coverage-stats {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .coverage-stat-number {
+                font-size: 2rem;
+            }
+
+            .coverage-image img {
+                height: 350px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .testimonial-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .testimonial-text {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .author-image {
+                width: 45px;
+                height: 45px;
+            }
+
+            .author-name {
+                font-size: 0.95rem;
+            }
+
+            .author-title {
+                font-size: 0.85rem;
+            }
+
+            .cta-title {
+                font-size: 2.2rem;
+            }
+
+            .cta-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-form {
+                flex-direction: column;
+                border-radius: 20px;
+                padding: 0.8rem;
+            }
+
+            .cta-input {
+                padding: 1rem 1.5rem;
+                border-radius: 15px;
+            }
+
+            .cta-submit {
+                padding: 1rem 2rem;
+                border-radius: 15px;
+            }
+
+            .footer {
+                padding: 4rem 5% 2rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .footer-brand h3 {
+                font-size: 1.5rem;
+            }
+
+            .footer-brand p {
+                font-size: 0.95rem;
+            }
+
+            .footer-column h4 {
+                font-size: 0.95rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .footer-links {
+                gap: 0.6rem;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Enhanced Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Smooth Transitions */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button,
+        a {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        /* Loading Animation */
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        /* Mobile Navigation Toggle (Hidden by default) */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Pristine</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#gallery">Portfolio</a></li>
+                <li><a href="index.html#testimonials">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html"><button class="nav-cta">Contact Us</button></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Trusted in 45+ Countries
+                </div>
+                <h1 class="hero-title">
+                    Spotless Spaces,<br>
+                    <span class="highlight">Worldwide Standards</span>
+                </h1>
+                <p class="hero-description">
+                    Experience world-class cleaning services delivered with care, precision, and 
+                    eco-friendly practices. From homes to offices, we bring international 
+                    excellence to every corner.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Book a Service</button>
+                    <button class="btn-secondary">See Our Work</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-card">
+                    <!-- Replace this image URL with your own -->
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=600&fit=crop&q=80" 
+                         alt="Professional cleaning service" class="hero-img">
+                    <div class="image-badge">
+                        <div class="badge-stat">98%</div>
+                        <div class="badge-label">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-number">45+</div>
+                <div class="trust-label">Countries Served</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">50K+</div>
+                <div class="trust-label">Happy Clients</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">15K+</div>
+                <div class="trust-label">Projects Done</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">24/7</div>
+                <div class="trust-label">Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header">
+                <div class="section-badge">Our Services</div>
+                <h2 class="section-title">Complete Cleaning Solutions</h2>
+                <p class="section-description">
+                    Professional services tailored to your needs with eco-friendly products 
+                    and certified staff you can trust.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Residential Cleaning</h3>
+                    <p class="service-description">
+                        Transform your home into a pristine sanctuary with our comprehensive 
+                        residential cleaning services using eco-friendly products.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3 class="service-title">Commercial Cleaning</h3>
+                    <p class="service-description">
+                        Keep your workplace spotless and professional with our flexible 
+                        commercial cleaning solutions for offices and businesses.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3 class="service-title">Deep Cleaning</h3>
+                    <p class="service-description">
+                        Intensive cleaning that reaches every corner. Perfect for move-ins, 
+                        move-outs, or when you need a complete refresh.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪟</div>
+                    <h3 class="service-title">Window Cleaning</h3>
+                    <p class="service-description">
+                        Crystal-clear windows inside and out with streak-free shine that 
+                        enhances natural lighting in your space.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧼</div>
+                    <h3 class="service-title">Carpet & Upholstery</h3>
+                    <p class="service-description">
+                        Professional fabric cleaning that removes stains, odors, and allergens 
+                        to extend the life of your furnishings.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3 class="service-title">Eco-Friendly Options</h3>
+                    <p class="service-description">
+                        Sustainable cleaning with certified green products that protect your 
+                        family and the environment without compromise.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="why-container">
+            <div class="why-content">
+                <div class="section-badge">Why Choose Pristine</div>
+                <h2 class="section-title">Excellence in Every Detail</h2>
+                <p class="why-intro">
+                    We don't just clean—we transform spaces with international standards 
+                    of excellence, bringing peace of mind to every client we serve.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h4>Certified Professionals</h4>
+                        <p>Trained and certified staff with international credentials</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h4>Fully Insured</h4>
+                        <p>Complete coverage and bonded team for your security</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p>Round-the-clock customer service across all time zones</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                                <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                                <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h4>Premium Products</h4>
+                        <p>Professional-grade, eco-certified cleaning solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="why-image">
+                <!-- Replace this image URL with your own -->
+                <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800&h=1000&fit=crop&q=80" alt="Professional cleaning team">
+                <div class="image-stats">
+                    <div class="stat-badge">
+                        <div class="stat-badge-number">15+</div>
+                        <div class="stat-badge-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="process-container">
+            <div class="section-header">
+                <div class="section-badge">How It Works</div>
+                <h2 class="section-title">Simple. Fast. Reliable.</h2>
+                <p class="section-description">
+                    Get started with our seamless booking process and experience 
+                    professional cleaning in just a few steps.
+                </p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-image">
+                        <!-- Replace this image URL with your own -->
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=400&fit=crop&q=80" alt="Book online">
+                    </div>
+                    <h3 class="step-title">Book Online</h3>
+                    <p class="step-description">
+                        Choose your service, pick a date and time that works for you. 
+                        Instant confirmation in seconds.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-image">
+                        <!-- Replace this image URL with your own -->
+                        <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=600&h=400&fit=crop&q=80" alt="Professional team arrives">
+                    </div>
+                    <h3 class="step-title">We Arrive</h3>
+                    <p class="step-description">
+                        Our certified team arrives on time with all equipment and 
+                        eco-friendly supplies ready to work.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-image">
+                        <!-- Replace this image URL with your own -->
+                        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=400&fit=crop&q=80" alt="Enjoy clean space">
+                    </div>
+                    <h3 class="step-title">Enjoy Results</h3>
+                    <p class="step-description">
+                        Relax in your spotless space. We guarantee satisfaction or 
+                        we'll return to make it right.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Showcase -->
+    <section class="showcase-section">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <div class="section-badge">Transformations</div>
+                <h2 class="section-title">See The Difference</h2>
+                <p class="showcase-text">
+                    Real results from real clients. Our meticulous attention to detail 
+                    transforms spaces from cluttered to pristine, leaving every surface 
+                    sparkling and every room fresh.
+                </p>
+                <div class="showcase-features">
+                    <div class="showcase-feature">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Deep sanitization of all surfaces</span>
+                    </div>
+                    <div class="showcase-feature">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Professional-grade equipment</span>
+                    </div>
+                    <div class="showcase-feature">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Eco-friendly cleaning products</span>
+                    </div>
+                </div>
+                <button class="btn-primary">View More Projects</button>
+            </div>
+            <div class="showcase-images">
+                <!-- Replace these image URLs with your own -->
+                <div class="showcase-image-main">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&q=80" alt="Clean living room">
+                </div>
+                <div class="showcase-image-grid">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=300&fit=crop&q=80" alt="Clean kitchen">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop&q=80" alt="Clean bathroom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-container">
+            <div class="section-header">
+                <div class="section-badge">Our Work</div>
+                <h2 class="section-title">Transformations We're Proud Of</h2>
+                <p class="section-description">
+                    See the difference professional cleaning makes in real spaces around the world.
+                </p>
+            </div>
+            <div class="gallery-grid">
+                <!-- Replace these image URLs with your own -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=600&fit=crop&q=80" alt="Living room">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Modern Living Room</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=600&fit=crop&q=80" alt="Kitchen">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Gourmet Kitchen</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=600&fit=crop&q=80" alt="Bathroom">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Spa Bathroom</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=600&fit=crop&q=80" alt="Office">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Corporate Office</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=600&fit=crop&q=80" alt="Commercial">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Commercial Space</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&h=600&fit=crop&q=80" alt="Bedroom">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Master Bedroom</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&h=600&fit=crop&q=80" alt="Dining">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Dining Room</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=600&h=600&fit=crop&q=80" alt="Hotel">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Hotel Lobby</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="pricing-container">
+            <div class="section-header">
+                <div class="section-badge">Simple Pricing</div>
+                <h2 class="section-title">Choose Your Plan</h2>
+                <p class="section-description">
+                    Transparent pricing with no hidden fees. Select the package that fits 
+                    your needs or create a custom plan.
+                </p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Basic Clean</h3>
+                        <p class="pricing-subtitle">Perfect for regular maintenance</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">89</span>
+                        <span class="price-period">/visit</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>All rooms cleaned</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Dusting & vacuuming</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Kitchen & bathroom sanitization</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Trash removal</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Eco-friendly products</span>
+                        </li>
+                    </ul>
+                    <button class="pricing-button">Get Started</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Deep Clean</h3>
+                        <p class="pricing-subtitle">Comprehensive cleaning solution</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">159</span>
+                        <span class="price-period">/visit</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Everything in Basic</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Deep carpet cleaning</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Window washing (interior)</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Appliance cleaning</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Baseboard & ceiling fan cleaning</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Priority scheduling</span>
+                        </li>
+                    </ul>
+                    <button class="pricing-button primary">Get Started</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Premium Care</h3>
+                        <p class="pricing-subtitle">Ultimate cleaning experience</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">249</span>
+                        <span class="price-period">/visit</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Everything in Deep Clean</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Exterior window cleaning</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Upholstery deep clean</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Outdoor patio/balcony cleaning</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Dedicated account manager</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Same-day service available</span>
+                        </li>
+                    </ul>
+                    <button class="pricing-button">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Coverage Section -->
+    <section class="coverage">
+        <div class="coverage-container">
+            <div class="coverage-content">
+                <div class="section-badge">Global Presence</div>
+                <h2 class="section-title">Serving 45+ Countries</h2>
+                <p class="coverage-text">
+                    With operations across six continents, we bring consistent, world-class 
+                    cleaning services to clients everywhere. Our international network ensures 
+                    the same high standards no matter where you are.
+                </p>
+                <div class="coverage-stats">
+                    <div class="coverage-stat">
+                        <div class="coverage-stat-number">150+</div>
+                        <div class="coverage-stat-label">Cities Worldwide</div>
+                    </div>
+                    <div class="coverage-stat">
+                        <div class="coverage-stat-number">2000+</div>
+                        <div class="coverage-stat-label">Trained Staff</div>
+                    </div>
+                    <div class="coverage-stat">
+                        <div class="coverage-stat-number">99.8%</div>
+                        <div class="coverage-stat-label">On-Time Rate</div>
+                    </div>
+                </div>
+                <button class="btn-primary">Find Your Location</button>
+            </div>
+            <div class="coverage-image">
+                <!-- Replace this image URL with your own -->
+                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&h=600&fit=crop&q=80" alt="Global coverage map">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <div class="section-badge">Client Reviews</div>
+                <h2 class="section-title">Trusted by Thousands</h2>
+                <p class="section-description">
+                    Real experiences from satisfied clients around the world.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <!-- Replace these profile image URLs with your own -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Pristine transformed our office completely. The attention to detail is 
+                        incredible, and their team is always professional and on time. Best cleaning 
+                        service we've ever used!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80" 
+                             alt="Sarah Johnson" class="author-image">
+                        <div>
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-title">CEO, Tech Innovations</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "We've been using Pristine for years and they never disappoint. Their 
+                        eco-friendly approach and thorough work make them stand out from the rest."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80" 
+                             alt="Michael Chen" class="author-image">
+                        <div>
+                            <div class="author-name">Michael Chen</div>
+                            <div class="author-title">Homeowner, Singapore</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The deep cleaning service exceeded all my expectations. Every corner of my 
+                        home sparkles now. The team was respectful and incredibly efficient!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&q=80" 
+                             alt="Emma Rodriguez" class="author-image">
+                        <div>
+                            <div class="author-name">Emma Rodriguez</div>
+                            <div class="author-title">Property Manager, London</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <h2 class="cta-title">Ready for a Cleaner Space?</h2>
+            <p class="cta-description">
+                Get your free quote today and experience the difference professional 
+                cleaning makes. No obligation, instant estimate.
+            </p>
+            <form class="cta-form">
+                <input type="email" class="cta-input" placeholder="Enter your email address" required>
+                <button type="submit" class="cta-submit">Get Free Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Pristine</h3>
+                <p>
+                    International cleaning services committed to excellence, sustainability, 
+                    and customer satisfaction. Bringing world-class cleanliness to homes and 
+                    businesses globally.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Residential</a></li>
+                    <li><a href="#">Commercial</a></li>
+                    <li><a href="#">Deep Cleaning</a></li>
+                    <li><a href="#">Specialized</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pristine International Cleaning Services. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
